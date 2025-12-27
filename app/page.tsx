@@ -108,8 +108,9 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
+    <main className="min-h-screen bg-white overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
+        <Navbar />
 
       {/* Hero Section */}
       <Section id="home" background="primary" padding="lg" className="pt-40 pb-32 overflow-hidden relative">
@@ -306,138 +307,163 @@ export default function Home() {
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact" background="dark" padding="lg" className="bg-[#0a0a0a] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-900/10 -skew-x-12 translate-x-1/4"></div>
-        <div className="grid lg:grid-cols-2 gap-20 relative z-10">
+      <Section id="contact" background="dark" padding="lg" className="bg-[#050505] relative overflow-hidden">
+        {/* Subtle decorative glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-600/10 rounded-full blur-[120px] -z-10 delay-1000"></div>
+
+        <div className="grid lg:grid-cols-2 gap-24 relative z-10">
           <div>
-            <h2 className="text-5xl font-black mb-8 font-display tracking-tight">Let's Build <br /><span className="text-primary-500">Together</span></h2>
-            <p className="text-neutral-400 mb-12 text-xl leading-relaxed">
-              Partner with Al Saeed for your next landmark project. Our team is ready to deliver excellence.
+            <div className="inline-block px-4 py-1.5 bg-primary-500/10 text-primary-400 text-xs font-black uppercase tracking-[0.3em] rounded-full border border-primary-500/20 mb-8">
+              Regional Presence • International Standards
+            </div>
+            <h2 className="text-6xl md:text-7xl font-black mb-10 font-display tracking-tight leading-none">
+              Let's Build <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">
+                The Future.
+              </span>
+            </h2>
+            <p className="text-neutral-400 mb-16 text-xl leading-relaxed max-w-lg font-medium">
+              Al Saeed provides industrial-grade solutions for Qatar's most demanding infrastructure projects. We're ready to partner with you.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-10">
-              <div className="space-y-10">
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
-                    <MapPin className="w-6 h-6 text-primary-400 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Headquarters</p>
-                    <p className="text-neutral-400 text-sm leading-relaxed">Flat 3, Floor 4, Building 30<br />Street 950, Doha, Qatar</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 gap-12">
+              <div className="space-y-12">
+                <div className="group">
+                  <p className="font-black text-primary-500 mb-4 uppercase tracking-[0.2em] text-[10px]">Headquarters</p>
+                  <p className="text-white text-lg font-bold leading-snug group-hover:text-primary-400 transition-colors">
+                    Flat 3, Floor 4, Building 30<br />Street 950, Umm Ghuwailina<br />Doha, Qatar
+                  </p>
                 </div>
 
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
-                    <Phone className="w-6 h-6 text-primary-400 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Direct Line</p>
-                    <p className="text-neutral-400 text-sm leading-relaxed">+974 55799113</p>
-                  </div>
+                <div className="group">
+                  <p className="font-black text-primary-500 mb-4 uppercase tracking-[0.2em] text-[10px]">Direct Assistance</p>
+                  <p className="text-white text-3xl font-black tracking-tight group-hover:text-primary-400 transition-colors">
+                    +974 55799113
+                  </p>
                 </div>
               </div>
 
-              <div className="space-y-10">
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
-                    <Mail className="w-6 h-6 text-primary-400 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Email Us</p>
-                    <p className="text-neutral-400 text-sm leading-relaxed break-all">alsaeedcontractingtrading@gmail.com</p>
-                  </div>
+              <div className="space-y-12">
+                <div className="group">
+                  <p className="font-black text-primary-500 mb-4 uppercase tracking-[0.2em] text-[10px]">Digital Inquiry</p>
+                  <p className="text-white text-lg font-bold break-all group-hover:text-primary-400 transition-colors">
+                    alsaeedcontractingtrading@gmail.com
+                  </p>
                 </div>
 
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
-                    <Clock className="w-6 h-6 text-primary-400 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Working Hours</p>
-                    <p className="text-neutral-400 text-sm leading-relaxed">Sat - Thu: 08:00 - 17:00</p>
-                  </div>
+                <div className="group">
+                  <p className="font-black text-primary-500 mb-4 uppercase tracking-[0.2em] text-[10px]">Operational Hours</p>
+                  <p className="text-white text-lg font-bold group-hover:text-primary-400 transition-colors">
+                    Sat - Thu: 08:00 - 17:00<br />AST (Arabia Standard Time)
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900/50 backdrop-blur-xl p-10 md:p-12 rounded-[2.5rem] border border-neutral-800 lg:translate-y-12 shadow-2xl">
-            <h3 className="text-3xl font-bold mb-8 font-display">Project Inquiry</h3>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all"
-                />
-              </div>
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all"
-              />
-              <textarea
-                rows={4}
-                placeholder="How can we help with your project?"
-                className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all resize-none"
-              ></textarea>
-              <Button variant="primary" size="lg" className="w-full py-5 rounded-2xl shadow-primary-500/20 shadow-xl">
-                Submit Proposal Inquiry
-              </Button>
-            </form>
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-[3rem] blur-xl opacity-50"></div>
+            <div className="relative bg-neutral-900/40 backdrop-blur-2xl p-10 md:p-14 rounded-[3rem] border border-white/5 shadow-2xl">
+              <h3 className="text-4xl font-black mb-10 font-display tracking-tight text-white italic">Begin Your Partnership</h3>
+              <form className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-1">Full Identity</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. John Doe"
+                      className="w-full px-8 py-5 bg-white/5 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-white/5 transition-all placeholder:text-neutral-700"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-1">Email Connection</label>
+                    <input
+                      type="email"
+                      placeholder="name@company.com"
+                      className="w-full px-8 py-5 bg-white/5 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-white/5 transition-all placeholder:text-neutral-700"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-1">Contact Phone</label>
+                  <input
+                    type="tel"
+                    placeholder="+974 XXXX XXXX"
+                    className="w-full px-8 py-5 bg-white/5 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-white/5 transition-all placeholder:text-neutral-700"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-1">Requirement Overview</label>
+                  <textarea
+                    rows={4}
+                    placeholder="Briefly describe your project requirements..."
+                    className="w-full px-8 py-5 bg-white/5 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-white/5 transition-all resize-none placeholder:text-neutral-700"
+                  ></textarea>
+                </div>
+                <Button variant="primary" size="lg" className="w-full py-6 rounded-2xl shadow-2xl shadow-primary-500/20 text-lg font-black tracking-widest uppercase">
+                  Transmit Inquiry
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </Section>
 
       {/* Footer */}
-      <footer className="bg-neutral-950 text-neutral-400 pyContinue9:56 AM-12">
-<div className="container mx-auto px-4">
-<div className="grid md:grid-cols-4 gap-8 mb-8">
-<div>
-<Logo size="md" showText={true} className="mb-4" />
-<p className="text-sm text-neutral-400 mt-4">
-Building excellence in Qatar's construction industry since 2009.
-</p>
-</div>
-        <div>
-          <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#about" className="hover:text-primary-400 transition">About Us</a></li>
-            <li><a href="#services" className="hover:text-primary-400 transition">Services</a></li>
-            <li><a href="#projects" className="hover:text-primary-400 transition">Projects</a></li>
-            <li><a href="#contact" className="hover:text-primary-400 transition">Contact</a></li>
-          </ul>
-        </div>
+      <footer className="bg-neutral-950 text-neutral-500 py-24 border-t border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-16 mb-20">
+            <div className="col-span-1 md:col-span-1">
+              <Logo size="md" showText={true} className="mb-8 invert transition-opacity hover:opacity-80" />
+              <p className="text-sm leading-relaxed max-w-xs">
+                Since 2009, Al Saeed Trading & Contracting has been a symbol of engineering excellence and industrial integrity in the State of Qatar.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-white text-xs font-black mb-8 uppercase tracking-[0.3em]">Foundation</h4>
+              <ul className="space-y-4 text-sm font-medium">
+                <li><a href="#about" className="hover:text-primary-500 transition-colors">Our Legacy</a></li>
+                <li><a href="#services" className="hover:text-primary-500 transition-colors">Turnkey Services</a></li>
+                <li><a href="#projects" className="hover:text-primary-500 transition-colors">Major Works</a></li>
+                <li><a href="#contact" className="hover:text-primary-500 transition-colors">Connect</a></li>
+              </ul>
+            </div>
 
-        <div>
-          <h4 className="text-white font-semibold mb-4">Services</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-primary-400 transition">Building Construction</a></li>
-            <li><a href="#services" className="hover:text-primary-400 transition">Excavation</a></li>
-            <li><a href="#services" className="hover:text-primary-400 transition">Maintenance</a></li>
-            <li><a href="#services" className="hover:text-primary-400 transition">Renovation</a></li>
-          </ul>
-        </div>
+            <div>
+              <h4 className="text-white text-xs font-black mb-8 uppercase tracking-[0.3em]">Services</h4>
+              <ul className="space-y-4 text-sm font-medium">
+                <li><a href="#services" className="hover:text-primary-500 transition-colors">Infrastructure</a></li>
+                <li><a href="#services" className="hover:text-primary-500 transition-colors">Heavy Earthworks</a></li>
+                <li><a href="#services" className="hover:text-primary-500 transition-colors">Facility Maintenance</a></li>
+                <li><a href="#services" className="hover:text-primary-500 transition-colors">Industrial Renovation</a></li>
+              </ul>
+            </div>
 
-        <div>
-          <h4 className="text-white font-semibold mb-4">Certifications</h4>
-          <p className="text-sm mb-2">C.R. Number: 79356</p>
-          <p className="text-sm mb-2">License: 70347</p>
-          <p className="text-sm">Ministry Approved</p>
-        </div>
-      </div>
+            <div>
+              <h4 className="text-white text-xs font-black mb-8 uppercase tracking-[0.3em]">Governance</h4>
+              <div className="space-y-4 text-sm font-medium">
+                <p>C.R. Number: <span className="text-white">79356</span></p>
+                <p>License: <span className="text-white">70347</span></p>
+                <div className="inline-flex items-center px-3 py-1 bg-white/5 rounded-full border border-white/10 text-[10px] text-primary-400 font-black tracking-widest uppercase">
+                  Ministry Approved
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div className="border-t border-neutral-800 pt-8 text-center text-sm">
-        <p>&copy; 2026 Al Saeed Trading & Contracting WLL. All rights reserved.</p>
-      </div>
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-xs font-bold uppercase tracking-widest">&copy; 2026 Al Saeed Trading & Contracting WLL. All rights reserved.</p>
+            <div className="flex space-x-8 text-xs font-bold uppercase tracking-widest">
+              <a href="#" className="hover:text-primary-500 transition-colors">Privacy</a>
+              <a href="#" className="hover:text-primary-500 transition-colors">Terms</a>
+              <a href="#" className="hover:text-primary-500 transition-colors">Compliance</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-  </footer>
-</main>
+  </main>
 );
 }

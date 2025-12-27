@@ -29,7 +29,7 @@ export default function Section({
   };
 
   return (
-    <section id={id} className={`${backgrounds[background]} ${paddings[padding]} ${className}`}>
+    <section id={id} className={`overflow-hidden ${backgrounds[background]} ${paddings[padding]} ${className}`}>
       <div className="container mx-auto px-4">
         {children}
       </div>
