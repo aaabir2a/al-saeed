@@ -23,10 +23,13 @@ export default function Logo({ size = 'md', showText = true, className = '' }: L
   return (
     <div className={`flex items-center space-x-3 ${className}`}>
       <div className={`${sizes[size]} relative`}>
-        {/* Replace with actual logo */}
-        <div className={`${sizes[size]} bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center shadow-lg`}>
-          <Building2 className={`${size === 'sm' ? 'w-4 h-4' : size === 'md' ? 'w-6 h-6' : 'w-8 h-8'} text-white`} />
-        </div>
+        <Image
+          src="/logo/logo.png"
+          alt="Al Saeed Logo"
+          fill
+          className="object-contain"
+          priority
+        />
       </div>
       {showText && (
         <div>

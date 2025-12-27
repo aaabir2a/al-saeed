@@ -1,3 +1,4 @@
+import NextImage from 'next/image';
 import Navbar from '@/components/Navbar';
 import Logo from '@/components/Logo';
 import Button from '@/components/Button';
@@ -111,30 +112,61 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <Section id="home" background="primary" padding="lg" className="pt-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 mb-6 font-display leading-tight">
-              Building Qatar's <span className="text-primary-600">Future</span>
+      <Section id="home" background="primary" padding="lg" className="pt-40 pb-32 overflow-hidden relative">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary-100/30 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-accent-100/30 rounded-full blur-3xl -z-10"></div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center relative">
+          <div className="z-10">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-50 rounded-full border border-primary-100 mb-8 animate-fade-in">
+              <span className="flex h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
+              <span className="text-sm font-bold text-primary-700 uppercase tracking-widest">Est. 2009 • Excellence in Qatar</span>
+            </div>
+            
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-neutral-950 mb-8 font-display leading-[1.05] tracking-tight">
+              Building Qatar's <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+                Future
+              </span>
             </h1>
-            <p className="text-xl text-neutral-700 mb-8 leading-relaxed">
-              With over 14 years of excellence in civil construction and contracting, 
-              Al Saeed Trading & Contracting delivers quality projects on time with competitive value.
+            
+            <p className="text-xl md:text-2xl text-neutral-600 mb-12 leading-relaxed max-w-xl font-medium">
+              With over <span className="text-neutral-950 font-bold">14 years</span> of excellence in civil construction. 
+              Delivering landmark projects with integrity and competitive value.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="#services">
-                Our Services
+            
+            <div className="flex flex-wrap gap-6">
+              <Button variant="primary" size="lg" href="#services" className="px-10 py-5 rounded-2xl">
+                Explore Services
               </Button>
-              <Button variant="outline" size="lg" href="#contact">
-                Contact Us
+              <Button variant="outline" size="lg" href="#contact" className="px-10 py-5 rounded-2xl">
+                Get a Quote
               </Button>
             </div>
           </div>
-          <div className="relative h-96 lg:h-[500px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-3xl transform rotate-3 shadow-2xl"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-accent-600 to-accent-800 rounded-3xl overflow-hidden shadow-2xl">
-              <div className="w-full h-full flex items-center justify-center">
-                <Building2 className="w-32 h-32 text-white opacity-20" />
+          
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-primary-500/20 to-accent-500/20 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+            <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-[2.5rem] transform rotate-3 transition-transform duration-500 group-hover:rotate-6 shadow-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-[2.5rem] shadow-2xl overflow-hidden transition-transform duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-5929c69d3978?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40"></div>
+                <div className="h-full flex items-center justify-center p-12">
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-white/10 backdrop-blur-3xl rounded-[2rem] mx-auto mb-8 flex items-center justify-center border border-white/20 p-6 shadow-2xl">
+                      <div className="relative w-full h-full">
+                        <NextImage src="/logo/logo.png" alt="Logo" fill className="object-contain" />
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="text-5xl font-black text-white font-display uppercase tracking-wider">Al Saeed</div>
+                      <div className="text-primary-400 font-bold tracking-[0.4em] uppercase text-xs">Trading & Contracting</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -142,8 +174,8 @@ export default function Home() {
       </Section>
 
       {/* Stats Section */}
-      <Section background="dark" padding="md" className="bg-gradient-to-r from-accent-700 to-accent-900">
-        <div className="grid md:grid-cols-4 gap-8">
+      <Section background="dark" padding="md" className="relative z-10 -mt-12 mx-4 md:mx-12 rounded-[2rem] shadow-2xl bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 border border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           <StatCard value="14+" label="Years Experience" />
           <StatCard value="100+" label="Projects Completed" />
           <StatCard value="50+" label="Expert Team" />
@@ -153,38 +185,41 @@ export default function Home() {
 
       {/* About Section */}
       <Section id="about" background="white" padding="lg">
-        <SectionTitle
-          title="About Al Saeed"
-          subtitle="Founded by Engineer Mofijur Rahman, we've grown from humble beginnings to become a major player in Qatar's civil construction industry."
-        />
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <SectionTitle
+            title="Our Legacy of Excellence"
+            subtitle="Founded by Engineer Mofijur Rahman, Al Saeed has evolved from a specialized contractor into a major player in Qatar's infrastructure, built on a foundation of trust and technical mastery."
+          />
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-10">
           <ValueCard
             icon={<Shield className="w-12 h-12" />}
-            title="Integrity"
-            description="Honesty and integrity guide all our operations with respect for environment, community, and people."
+            title="Unyielding Integrity"
+            description="Our word is our bond. We maintain the highest ethical standards in every contract, ensuring transparency and accountability."
           />
           <ValueCard
             icon={<HardHat className="w-12 h-12" />}
-            title="Safety"
-            description="No compromise with safety. We ensure everyone goes home safely at the end of each working day."
+            title="Safety First Culture"
+            description="At Al Saeed, safety isn't a policy—it's a promise. We implement rigorous protocols to ensure a zero-harm environment."
           />
           <ValueCard
             icon={<Award className="w-12 h-12" />}
-            title="Success"
-            description="Providing quality products to satisfy clients and maintain long-term relationships for mutual benefit."
+            title="Proven Success"
+            description="With over a decade of successful project delivery, we provide high-value solutions that exceed client expectations."
           />
         </div>
       </Section>
 
       {/* Services Section */}
-      <Section id="services" background="gray" padding="lg">
+      <Section id="services" background="gray" padding="lg" className="relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent"></div>
         <SectionTitle
-          title="Our Services"
-          subtitle="Comprehensive construction services for heavy civil, commercial, industrial, and municipal projects."
+          title="Mastering Heavy Civil & Building Works"
+          subtitle="We offer turnkey solutions across the construction spectrum, specializing in high-complexity infrastructure and industrial projects."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
@@ -193,35 +228,39 @@ export default function Home() {
 
       {/* Resources Section */}
       <Section background="white" padding="lg">
-        <SectionTitle
-          title="Our Resources"
-          subtitle="Equipped with state-of-the-art machinery and an experienced team of professionals."
-        />
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold text-neutral-900 mb-6 font-display">Extensive Fleet</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {['Heavy Transporters', 'Excavators', 'Bulldozers', 'Graders', 'Cranes (50 Ton)', 'Rollers', 'Forklifts', 'Generators'].map((equipment) => (
-                <div key={equipment} className="bg-gradient-to-br from-primary-50 to-primary-100 p-4 rounded-xl border border-primary-200">
-                  <Truck className="w-6 h-6 text-primary-600 mb-2" />
-                  <p className="font-semibold text-neutral-900">{equipment}</p>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="order-2 lg:order-1">
+            <h3 className="text-4xl font-black text-neutral-950 mb-8 font-display tracking-tight">Industrial Strength <br /><span className="text-primary-600">Infrastructure</span></h3>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { name: 'Heavy Transporters', icon: <Truck /> },
+                { name: 'Excavators', icon: <Wrench /> },
+                { name: 'Bulldozers', icon: <Building2 /> },
+                { name: 'Cranes (50 Ton)', icon: <HardHat /> },
+                { name: 'Rollers', icon: <Shield /> },
+                { name: 'Generators', icon: <Wrench /> }
+              ].map((item, i) => (
+                <div key={i} className="group bg-neutral-50 p-6 rounded-2xl border border-neutral-100 hover:border-primary-200 hover:bg-white hover:shadow-xl transition-all duration-300">
+                  <div className="text-primary-500 mb-4 transform group-hover:scale-110 transition-transform">{item.icon}</div>
+                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors uppercase text-xs tracking-widest">{item.name}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div>
-            <h3 className="text-3xl font-bold text-neutral-900 mb-6 font-display">Professional Team</h3>
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl border border-primary-200">
-              <Users className="w-12 h-12 text-primary-600 mb-4" />
-              <p className="text-neutral-700 mb-4 text-lg">
-                Our team of 15+ professionals brings extensive experience and skills to ensure 
-                successful project delivery.
-              </p>
-              <p className="text-neutral-700 text-lg">
-                We believe that our staff are our most important asset, and we invest in their 
-                personal and professional development.
-              </p>
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary-100 rounded-[3rem] -z-10 transform -rotate-3"></div>
+              <div className="bg-gradient-to-br from-primary-600 to-primary-800 p-12 rounded-[3rem] shadow-2xl text-white">
+                <Users className="w-16 h-16 text-primary-200 mb-8" />
+                <h4 className="text-3xl font-bold mb-6 font-display">A Workforce of Specialists</h4>
+                <p className="text-primary-50/90 mb-8 text-lg leading-relaxed">
+                  Our core strength lies in our team of 50+ dedicated professionals. From senior engineers to site supervisors, every member is committed to the Al Saeed standard of excellence.
+                </p>
+                <div className="flex items-center space-x-6">
+                  <div className="h-px flex-1 bg-white/20"></div>
+                  <Button variant="outline" className="border-white/40 text-white hover:bg-white hover:text-primary-700">Learn More</Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -230,11 +269,11 @@ export default function Home() {
       {/* Projects Section */}
       <Section id="projects" background="gray" padding="lg">
         <SectionTitle
-          title="Featured Projects"
-          subtitle="From private developments to large government projects across Qatar."
+          title="Landmark Developments"
+          subtitle="Explore our portfolio of high-impact projects that are shaping the landscape of modern Qatar."
         />
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
@@ -244,108 +283,112 @@ export default function Home() {
       {/* Associated Business */}
       <Section background="white" padding="lg">
         <SectionTitle
-          title="Associated Businesses"
-          subtitle="Diversified business portfolio serving Qatar"
+          title="Diversified Group Operations"
+          subtitle="Beyond construction, Al Saeed Group is a pillar of Qatar's agricultural and food security sectors."
         />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl border border-green-200">
-            <div className="w-20 h-20 bg-green-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-              <span className="text-white text-3xl">🌱</span>
+        <div className="grid md:grid-cols-3 gap-10">
+          {[
+            { title: 'Vegetable Farm', icon: '🌱', bg: 'from-green-500 to-green-600', sub: 'Fresh Produce Cultivation' },
+            { title: 'Chicken House', icon: '🐔', bg: 'from-orange-500 to-orange-600', sub: 'Poultry Operations' },
+            { title: 'Dairy Farm', icon: '🐄', bg: 'from-blue-500 to-blue-600', sub: 'Quality Dairy Production' }
+          ].map((biz, i) => (
+            <div key={i} className="group relative p-10 bg-white rounded-3xl border border-neutral-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center overflow-hidden">
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${biz.bg} opacity-[0.03] rounded-bl-[5rem] group-hover:opacity-10 transition-opacity`}></div>
+              <div className={`w-24 h-24 bg-gradient-to-br ${biz.bg} rounded-full mx-auto mb-8 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform`}>
+                <span className="text-white text-4xl">{biz.icon}</span>
+              </div>
+              <h3 className="text-2xl font-black text-neutral-950 mb-3 font-display">{biz.title}</h3>
+              <p className="text-neutral-500 font-medium uppercase text-xs tracking-[0.2em]">{biz.sub}</p>
             </div>
-            <h3 className="text-xl font-bold text-neutral-900 mb-2 font-display">Al Saeed Vegetables Farm</h3>
-            <p className="text-neutral-600">Fresh produce cultivation</p>
-          </div>
-
-          <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl border border-orange-200">
-            <div className="w-20 h-20 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-              <span className="text-white text-3xl">🐔</span>
-            </div>
-            <h3 className="text-xl font-bold text-neutral-900 mb-2 font-display">Al Saeed Chicken House</h3>
-            <p className="text-neutral-600">Poultry farming operations</p>
-          </div>
-
-          <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200">
-            <div className="w-20 h-20 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-              <span className="text-white text-3xl">🐄</span>
-            </div>
-            <h3 className="text-xl font-bold text-neutral-900 mb-2 font-display">Al Saeed Dairy Farm</h3>
-            <p className="text-neutral-600">Quality dairy production</p>
-          </div>
+          ))}
         </div>
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact" background="dark" padding="lg" className="bg-gradient-to-br from-neutral-900 to-neutral-800">
-        <div className="grid lg:grid-cols-2 gap-12">
+      <Section id="contact" background="dark" padding="lg" className="bg-[#0a0a0a] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-900/10 -skew-x-12 translate-x-1/4"></div>
+        <div className="grid lg:grid-cols-2 gap-20 relative z-10">
           <div>
-            <h2 className="text-4xl font-bold mb-6 font-display">Get In Touch</h2>
-            <p className="text-neutral-300 mb-8 text-lg">
-              Ready to start your next project? Contact us for a consultation and quote.
+            <h2 className="text-5xl font-black mb-8 font-display tracking-tight">Let's Build <br /><span className="text-primary-500">Together</span></h2>
+            <p className="text-neutral-400 mb-12 text-xl leading-relaxed">
+              Partner with Al Saeed for your next landmark project. Our team is ready to deliver excellence.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-primary-400 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-white mb-1">Address</p>
-                  <p className="text-neutral-300">Flat 3, Floor 4, Building #30, Street 950</p>
-                  <p className="text-neutral-300">Umm Ghuwailina, Doha, Qatar</p>
+            <div className="grid md:grid-cols-2 gap-10">
+              <div className="space-y-10">
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
+                    <MapPin className="w-6 h-6 text-primary-400 group-hover:text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Headquarters</p>
+                    <p className="text-neutral-400 text-sm leading-relaxed">Flat 3, Floor 4, Building 30<br />Street 950, Doha, Qatar</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
+                    <Phone className="w-6 h-6 text-primary-400 group-hover:text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Direct Line</p>
+                    <p className="text-neutral-400 text-sm leading-relaxed">+974 55799113</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-primary-400 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-white mb-1">Phone</p>
-                  <p className="text-neutral-300">+974 55799113</p>
+              <div className="space-y-10">
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
+                    <Mail className="w-6 h-6 text-primary-400 group-hover:text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Email Us</p>
+                    <p className="text-neutral-400 text-sm leading-relaxed break-all">alsaeedcontractingtrading@gmail.com</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-primary-400 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-white mb-1">Email</p>
-                  <p className="text-neutral-300">alsaeedcontractingtrading@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Clock className="w-6 h-6 text-primary-400 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-white mb-1">Working Hours</p>
-                  <p className="text-neutral-300">Saturday - Thursday</p>
-                  <p className="text-neutral-300">8:00 AM - 5:00 PM (AST)</p>
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-12 h-12 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700 group-hover:bg-primary-500 group-hover:border-primary-400 transition-colors">
+                    <Clock className="w-6 h-6 text-primary-400 group-hover:text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white mb-1 uppercase tracking-widest text-xs">Working Hours</p>
+                    <p className="text-neutral-400 text-sm leading-relaxed">Sat - Thu: 08:00 - 17:00</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-800 p-8 rounded-2xl border border-neutral-700">
-            <h3 className="text-2xl font-bold mb-6 font-display">Send Us a Message</h3>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 bg-neutral-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-600"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-3 bg-neutral-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-600"
-              />
+          <div className="bg-neutral-900/50 backdrop-blur-xl p-10 md:p-12 rounded-[2.5rem] border border-neutral-800 lg:translate-y-12 shadow-2xl">
+            <h3 className="text-3xl font-bold mb-8 font-display">Project Inquiry</h3>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all"
+                />
+              </div>
               <input
                 type="tel"
-                placeholder="Your Phone"
-                className="w-full px-4 py-3 bg-neutral-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-600"
+                placeholder="Phone Number"
+                className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all"
               />
               <textarea
                 rows={4}
-                placeholder="Your Message"
-                className="w-full px-4 py-3 bg-neutral-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-600"
+                placeholder="How can we help with your project?"
+                className="w-full px-6 py-4 bg-neutral-800/50 text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 border border-neutral-700 transition-all resize-none"
               ></textarea>
-              <Button variant="primary" size="lg" className="w-full">
-                Send Message
+              <Button variant="primary" size="lg" className="w-full py-5 rounded-2xl shadow-primary-500/20 shadow-xl">
+                Submit Proposal Inquiry
               </Button>
             </form>
           </div>

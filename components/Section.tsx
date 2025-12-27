@@ -17,15 +17,15 @@ export default function Section({
 }: SectionProps) {
   const backgrounds = {
     white: 'bg-white',
-    gray: 'bg-neutral-50',
-    primary: 'bg-gradient-to-br from-primary-50 to-primary-100',
+    gray: 'bg-neutral-50/80',
+    primary: 'bg-gradient-to-br from-primary-50 via-white to-primary-100/50',
     dark: 'bg-neutral-900 text-white'
   };
 
   const paddings = {
-    sm: 'py-12',
-    md: 'py-16',
-    lg: 'py-20'
+    sm: 'py-16 md:py-20',
+    md: 'py-20 md:py-28',
+    lg: 'py-24 md:py-36'
   };
 
   return (
