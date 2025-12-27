@@ -113,58 +113,59 @@ export default function Home() {
         <Navbar />
 
       {/* Hero Section */}
-      <Section id="home" background="primary" padding="lg" className="pt-40 pb-32 overflow-hidden relative">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary-100/30 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-accent-100/30 rounded-full blur-3xl -z-10"></div>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center relative">
-          <div className="z-10">
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-50 rounded-full border border-primary-100 mb-8 animate-fade-in">
-              <span className="flex h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
-              <span className="text-sm font-bold text-primary-700 uppercase tracking-widest">Est. 2009 • Excellence in Qatar</span>
-            </div>
-            
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-neutral-950 mb-8 font-display leading-[1.05] tracking-tight">
-              Building Qatar's <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
-                Future
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-neutral-600 mb-12 leading-relaxed max-w-xl font-medium">
-              With over <span className="text-neutral-950 font-bold">14 years</span> of excellence in civil construction. 
-              Delivering landmark projects with integrity and competitive value.
-            </p>
-            
-            <div className="flex flex-wrap gap-6">
-              <Button variant="primary" size="lg" href="#services" className="px-10 py-5 rounded-2xl">
-                Explore Services
-              </Button>
-              <Button variant="outline" size="lg" href="#contact" className="px-10 py-5 rounded-2xl">
-                Get a Quote
-              </Button>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-primary-500/20 to-accent-500/20 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-            <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-[2.5rem] transform rotate-3 transition-transform duration-500 group-hover:rotate-6 shadow-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+      <Section id="home" background="primary" padding="lg" className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden relative">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="z-10">
+              <div className="inline-flex items-center space-x-2 px-4 py-1.5 bg-primary-100/50 rounded-full border border-primary-200/50 mb-6 animate-fade-in shadow-sm">
+                <span className="text-[10px] font-black text-primary-800 uppercase tracking-[0.2em]">Est. 2009 • Excellence in Qatar</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-[2.5rem] shadow-2xl overflow-hidden transition-transform duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-5929c69d3978?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40"></div>
-                <div className="h-full flex items-center justify-center p-12">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-white/10 backdrop-blur-3xl rounded-[2rem] mx-auto mb-8 flex items-center justify-center border border-white/20 p-6 shadow-2xl">
-                      <div className="relative w-full h-full">
-                        <NextImage src="/logo/logo.png" alt="Logo" fill className="object-contain" />
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-neutral-950 mb-6 font-display leading-[1] tracking-tight">
+                Building <br />
+                Qatar's <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+                  Future
+                </span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-neutral-500 mb-10 leading-relaxed max-w-lg font-medium">
+                With over <span className="text-neutral-950 font-black">14 years</span> of excellence in civil construction. 
+                Delivering landmark projects with integrity and competitive value.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <Button variant="primary" size="md" href="#services" className="px-10 py-4 rounded-xl shadow-lg shadow-primary-500/20 text-base font-black tracking-widest uppercase">
+                  Explore Services
+                </Button>
+                <Button variant="outline" size="md" href="#contact" className="px-10 py-4 rounded-xl border-2 text-base font-black tracking-widest uppercase">
+                  Get a Quote
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-primary-500/10 to-accent-500/10 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60"></div>
+              <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square max-w-[550px] mr-auto lg:ml-auto">
+                {/* Secondary Image Layer (Rotated Background) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-[3rem] transform rotate-3 transition-transform duration-700 group-hover:rotate-6 shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay opacity-60"></div>
+                </div>
+                
+                {/* Primary Image Layer with Logo Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-[3rem] shadow-2xl overflow-hidden transition-transform duration-700 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-5929c69d3978?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30"></div>
+                  <div className="h-full flex items-center justify-center p-8 md:p-12">
+                    <div className="text-center">
+                      <div className="w-24 h-24 md:w-32 md:h-32 bg-white/5 backdrop-blur-3xl rounded-[2rem] mx-auto mb-6 md:mb-8 flex items-center justify-center border border-white/10 p-5 md:p-6 shadow-2xl">
+                        <div className="relative w-full h-full">
+                          <NextImage src="/logo/logo.png" alt="Logo" fill className="object-contain" priority />
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="text-5xl font-black text-white font-display uppercase tracking-wider">Al Saeed</div>
-                      <div className="text-primary-400 font-bold tracking-[0.4em] uppercase text-xs">Trading & Contracting</div>
+                      <div className="space-y-2 md:space-y-3">
+                        <div className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-display uppercase tracking-wider">Al Saeed</div>
+                        <div className="text-primary-500 font-bold tracking-[0.4em] uppercase text-[10px] md:text-xs">Trading & Contracting</div>
+                      </div>
                     </div>
                   </div>
                 </div>
