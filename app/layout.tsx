@@ -102,18 +102,6 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Al Saeed Trading & Contracting - Building Qatar's Future",
       },
-      {
-        url: "/logo/logo-transparent.png",
-        width: 800,
-        height: 600,
-        alt: "Al Saeed Logo",
-      },
-      {
-        url: "/logo/logor-rounded.png",
-        width: 512,
-        height: 512,
-        alt: "Al Saeed Rounded Logo",
-      },
     ],
   },
 
