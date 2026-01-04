@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import StructuredData from "@/components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+      "ar-QA": "/ar", // For future Arabic version
+    },
   },
 
   // Robots
@@ -133,15 +138,28 @@ export const metadata: Metadata = {
 
   // Other metadata
   other: {
+    // Geo Location
     "geo.region": "QA",
     "geo.placename": "Doha",
     "geo.position": "25.2854;51.5310",
     ICBM: "25.2854, 51.5310",
+    // Business Contact
     "business:contact_data:street_address": "Flat 3, Floor 4, Building 30, Street 950, Umm Ghuwailina",
     "business:contact_data:locality": "Doha",
     "business:contact_data:country_name": "Qatar",
     "business:contact_data:phone_number": "+974 55799113",
     "business:contact_data:email": "alsaeedcontractingtrading@gmail.com",
+    // Microsoft Tile
+    "msapplication-TileColor": "#0f766e",
+    "msapplication-TileImage": "/logo/favicon_io/android-chrome-192x192.png",
+    // Apple
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-title": "Al Saeed",
+    // Format Detection
+    "format-detection": "telephone=no",
+    // OpenSearch
+    "opensearch": "/opensearch.xml",
   },
 };
 
@@ -161,10 +179,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StructuredData />
         {children}
       </body>
     </html>

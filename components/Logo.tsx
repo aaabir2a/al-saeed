@@ -24,7 +24,7 @@ export default function Logo({ size = 'md', showText = true, className = '' }: L
     <div className={`flex items-center space-x-3 ${className}`}>
       <div className={`${sizes[size]} relative`}>
         <Image
-          src="/logo/logo.png"
+          src="/logo/logo-transparent.png"
           alt="Al Saeed Logo"
           fill
           className="object-contain"
